@@ -1,68 +1,51 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Footer from '@/components/Footer'
+import PortfolioCard from '@/components/PortfolioCard'
+import { getAllProjects, type Project } from '@/lib/cms'
+import { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Our Work - Fikzstudio',
-  description: 'View our portfolio of successful projects',
-}
-
+// Note: metadata export doesn't work in client components, so we'll use next/head in the component
 export default function WorkPage() {
-  // Placeholder data - will be replaced with WordPress API data
-  const projects = [
-    {
-      id: 1,
-      title: 'E-commerce Website',
-      summary: 'Modern online store with seamless checkout',
-      services: ['Web Design', 'SEO'],
-      image: '/placeholder.jpg'
-    },
-    {
-      id: 2,
-      title: 'Corporate Website',
-      summary: 'Professional business website with CMS',
-      services: ['Web Design', 'Maintenance'],
-      image: '/placeholder.jpg'
-    },
-    {
-      id: 3,
-      title: 'Restaurant Website',
-      summary: 'Beautiful restaurant site with online ordering',
-      services: ['Web Design', 'Branding'],
-      image: '/placeholder.jpg'
-    }
-  ]
+  const [projects, setProjects] = useState<Project[]>([])
+
+  useEffect(() => {
+    // Load projects from CMS
+    setProjects(getAllProjects())
+  }, [])
 
   return (
     <>
+      <head>
+        <title>Our Portfolio - 50+ Successful Web Design Projects | Fikzstudio</title>
+        <meta name="description" content="Browse our portfolio of 50+ successful web design and development projects. See how we've helped businesses in Malaysia grow with stunning websites and digital solutions." />
+        <meta name="keywords" content="web design portfolio, Malaysia web projects, website examples, Fikzstudio work, web development showcase" />
+      </head>
       <main className="min-h-screen">
         <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-slate-100">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">Our Work</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our portfolio of successful projects
+              Explore our portfolio of successful projects and see how we've helped businesses grow
             </p>
           </div>
         </section>
 
         <section className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <div key={project.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-600 mb-4">{project.summary}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.services.map((service) => (
-                        <span key={service} className="text-xs bg-gray-100 px-3 py-1 rounded-full">
-                          {service}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {projects.length === 0 ? (
+              <div className="text-center py-20">
+                <div className="text-6xl mb-4">🚀</div>
+                <p className="text-gray-500 text-lg">No projects yet. Check back soon!</p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project) => (
+                  <PortfolioCard key={project.id} project={project} />
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </main>

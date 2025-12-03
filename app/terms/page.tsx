@@ -1,8 +1,13 @@
 import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Terms of Service - Fikzstudio',
-  description: 'Terms and conditions for using our services',
+export const metadata: Metadata = {
+  title: 'Terms of Service - Website Terms & Conditions | Fikzstudio',
+  description: 'Read Fikzstudio\'s terms of service and conditions for using our web design and digital marketing services. Clear terms for a transparent partnership.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function TermsPage() {

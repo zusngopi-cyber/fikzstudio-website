@@ -1,8 +1,13 @@
 import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Privacy Policy - Fikzstudio',
-  description: 'Our privacy policy and data protection practices',
+export const metadata: Metadata = {
+  title: 'Privacy Policy - How We Protect Your Data | Fikzstudio',
+  description: 'Read Fikzstudio\'s privacy policy to understand how we collect, use, and protect your personal information. Your privacy and data security are our priorities.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function PrivacyPage() {

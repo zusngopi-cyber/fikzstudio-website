@@ -113,6 +113,9 @@
 
 - [ ] 7.1 Write unit tests for project configuration
   - Test environment variable loading
+
+
+
   - Test Tailwind configuration
   - _Requirements: 7.1_
 
@@ -121,8 +124,12 @@
   - Implement data fetching functions for portfolio (getAllPortfolioProjects, getPortfolioBySlug)
   - Implement data fetching for categories and tags
   - Add error handling and retry logic with exponential backoff
+
+
   - Implement response caching
   - Create TypeScript interfaces for all data models (BlogPost, PortfolioProject, Category, Tag, Image)
+
+
   - _Requirements: 2.2, 3.2, 4.2_
 
 - [ ] 8.1 Write unit tests for API client

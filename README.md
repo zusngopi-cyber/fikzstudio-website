@@ -1,32 +1,8 @@
-# Fikzstudio Agency Website
+# Fikz Studio - Professional Web Design & Digital Marketing
 
-Modern, high-performance agency website built with Next.js 14, TypeScript, and Tailwind CSS.
+Modern, conversion-focused website for Fikz Studio digital agency.
 
-## Features
-
-- ⚡ Lightning-fast performance (Lighthouse 90+)
-- 🎨 Modern, professional design
-- 📱 Fully responsive (mobile-first)
-- 🔍 SEO optimized with sitemap & metadata
-- ♿ Accessible (WCAG compliant)
-- 🚀 Deployed on Vercel CDN
-
-## Tech Stack
-
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Deployment:** Vercel
-- **Analytics:** Google Analytics 4 (ready)
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
+## 🚀 Quick Start
 
 ```bash
 # Install dependencies
@@ -42,55 +18,51 @@ npm run build
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+## 📁 Project Structure
 
-## Deployment
+```
+├── app/              # Next.js app directory
+├── components/       # React components
+├── lib/             # Utility functions
+├── public/          # Static assets
+└── .kiro/specs/     # Feature specifications
+```
 
-### Deploy to Vercel (Recommended)
+## 🎯 Key Features
 
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Vercel will auto-detect Next.js and deploy
+- **Modern Hero Design** - Conversion-focused landing page
+- **Cost Calculator** - Interactive pricing calculator with PDF/WhatsApp export
+- **Admin Panel** - Content management system
+- **SEO Optimized** - Local SEO for Puncak Alam, Selangor
+- **Showcase Gallery** - Portfolio with auto-categorization
+- **Blog System** - Content marketing platform
 
-Or use Vercel CLI:
+## 🛠️ Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+## 📝 Environment Variables
+
+Create `.env.local`:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+ADMIN_PASSWORD=your-secure-password
+JWT_SECRET=your-jwt-secret
+```
+
+## 🚢 Deployment
+
+Deployed on Vercel. Push to `main` branch to trigger deployment.
 
 ```bash
-npm i -g vercel
-vercel
+git push origin main
 ```
 
-### Environment Variables
+## 📄 License
 
-Create `.env.local` for local development:
-
-```
-NEXT_PUBLIC_WP_API_URL=your-wordpress-url
-NEXT_PUBLIC_GA_ID=your-ga-id
-```
-
-## Project Structure
-
-```
-├── app/                  # Next.js app directory
-│   ├── page.tsx         # Homepage
-│   ├── services/        # Services page
-│   ├── work/            # Portfolio page
-│   ├── blog/            # Blog page
-│   ├── about/           # About page
-│   ├── contact/         # Contact page
-│   └── layout.tsx       # Root layout
-├── components/          # Reusable components
-├── public/              # Static assets
-└── tailwind.config.js   # Tailwind configuration
-```
-
-## Contact
-
-- **Email:** fikzstudiowork@gmail.com
-- **Phone:** 012-707 5391
-- **WhatsApp:** +60 12-707 5391
-
-## License
-
-© 2024 Fikzstudio. All rights reserved.
+© 2024 Fikz Studio. All rights reserved.
